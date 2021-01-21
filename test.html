@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<header class="header">
+  <div class="header-wrap">
+    <h1 class="header-logo">estra inc.</h1>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">service</a></li>
+        <li><a href="#">works</a></li>
+        <li><a href="#">price</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<body>
+  <table>
+    <tr>
+      <th>会社名</th>
+      <td>株式会社estra</td>
+    </tr>
+    <tr>
+      <th>所在地</th>
+      <td>東京都渋谷区千駄ヶ谷5-8-4第七瑞穂ビル4F</td>
+    </tr>
+    <tr>
+      <th>資本金</th>
+      <td>10,009,000円</td>
+    </tr>
+    <tr>
+      <th>電話</th>
+      <td>0120-793-687</td>
+    </tr>
+  </table>
+  <div id="company">
+    <h2 class="section-title">company</h2>
+    <table class="contain">
+      <tr>
+        <th>会社名</th>
+        <td>株式会社estra</td>
+      </tr>
+      <tr>
+        <th>代表者名</th>
+        <td>福場凜太郎</td>
+      </tr>
+      <tr>
+        <th>本社所在地</th>
+        <td>東京都渋谷区1-1</td>
+      </tr>
+      <tr>
+        <th>従業員数</th>
+        <td>100名</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td>0120-000-0000</td>
+      </tr>
+      <tr>
+        <th>FAX</th>
+        <td>0120-000-0000</td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td>rintaro@estra.inc</td>
+      </tr>
+      <tr>
+        <th>資本金</th>
+        <td>1000万円</td>
+      </tr>
+      <tr>
+        <th>事業内容</th>
+        <td>コーチング</td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+const school = {
+  name: "COACHTECH",
+  month: 2,
+  skills: ["html", "css", "js", "Vue.js", "php", "Laravel"],
+  createSentense() {
+    let data;
+    this.skills.forEach((skill, index) => {
+      if (index == 0) {
+        data = skill;
+      } else {
+        data = `${data}と${skill}`;
+      }
+    });
+    return `${this.name}は${this.month}ヶ月で${data}を学ぶことができます`;
+  },
+};
+
+console.log(school.createSentense());
+  </script> 
+<script src="test.js"></script>
+</body>
+</html>
