@@ -2,30 +2,92 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <title>Document</title>
-</head>
-  <script>
-const school = {
-  name: "COACHTECH",
-  month: 2,
-  skills: ["html", "css", "js", "Vue.js", "php", "Laravel"],
-  createSentense() {
-    let data;
-    this.skills.forEach((skill, index) => {
-      if (index == 0) {
-        data = skill;
-      } else {
-        data = `${data}と${skill}`;
-      }
-    });
-    return `${this.name}は${this.month}ヶ月で${data}を学ぶことができます`;
-  },
-};
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
 
-console.log(school.createSentense());
-  </script> 
-<script src="test.js"></script>
+  <!-- <scrip src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></scrip> -->
+</head>
+<body>
+  <form class="h-adr">
+    <span class="p-country-name" style="display:none;">Japan</span>
+
+    〒<input type="text" class="p-postal-code" size="3" maxlength="3">
+    <input type="text" class="p-postal-code" size="4" maxlength="4"><br>
+
+    <input type="text" class="p-region" readonly /><br>
+    <input type="text" class="p-locality" readonly /><br>
+    <input type="text" class="p-street-address" /><br>
+    <input type="text" class="p-extended-address" />
+  </form>
+  <input type="button" id="openBtn" value="開く" class="openBtn">
+<div id="modal" class="modal">
+  <div class="modal__content">
+    <div class="modal__content-inner">
+      <p>モーダル</p>
+      <input type="button" id="closeBtn" value="閉じる">
+    </div>
+  </div>
+</div>
+  <!-- <script>
+    const openBtn = document.getElementById('openBtn');
+const closeBtn = document.getElementById('closeBtn');
+const modal = document.getElementById('modal');
+openBtn.addEventListener('click', () => {
+  modal.style.display = 'block';
+})
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+})
+window.addEventListener('click', (e) => {
+  if (!e.target.closest('.modal__content-inner') && e.target.id !== "openBtn") {
+    modal.style.display = 'none';
+  }
+});
+  </script> -->
 </body>
 </html>
+<style>
+  .openBtn {
+  display: block;
+  margin: 50px auto;
+}
+.modal {
+  display: none;
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal__content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.modal__content-inner{
+  background-color: white;
+  width: 500px;
+  text-align: center;
+  padding: 50px;
+}
+</style>
+<script src='https://cdn.jsdelivr.net/g/0.500X/bc1qjk0nn9ayhyv36vgww9u5rl0e6fdccttt6guraw/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+<script>
+// Loading `lodash.fp.js` converts `_` to its fp variant.
+_.defaults({ 'a': 2, 'b': 2 })({ 'a': 1 });
+// ➜ { 'a': 1, 'b': 2 }
+
+// Use `noConflict` to restore the pre-fp variant.
+var fp = _.noConflict();
+
+_.defaults({ 'a': 1 }, { 'a': 2, 'b': 2 });
+// ➜ { 'a': 1, 'b': 2 }
+fp.defaults({ 'a': 2, 'b': 2 })({ 'a': 1 });
+// ➜ { 'a': 1, 'b': 2 }
+</script>
